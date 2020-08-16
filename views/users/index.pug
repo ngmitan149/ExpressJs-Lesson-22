@@ -1,0 +1,25 @@
+extends ../layouts/common
+include ../pagination/index.pug
+
+block content
+  mixin userItem(user)
+    li= user.name
+      | &nbsp;
+      a(href=`/users/${user.id}/edit`) edit
+      | &nbsp;
+      a(href=`/users/${user.id}/delete`) xóa
+
+  .container
+    .row
+      .col-12
+        a(href="/users/create") New
+        form(class="form-inline", action="/users", method="get")
+            .form-group
+              input#inputEmail4.form-control(type='text', placeholder='Enter your keyword to search ...', name="q", value=q)
+              button.btn.btn-secondary(type='submit') Search
+        ul
+          each user in users
+            +userItem(user)
+      if pagination
+        .col-12
+          +paginationTmp(pagination)

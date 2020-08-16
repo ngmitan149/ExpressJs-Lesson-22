@@ -1,0 +1,16 @@
+extends ../layouts/common
+
+block content
+  div Update
+  form(action="/books/private/update?_method=PUT" method="post" enctype="multipart/form-data")
+    input(type='hidden', name='id', value=book.id)
+    .form-group.col-6
+      label(for='bookTitle') Title: 
+      input#bookTitle.form-control(type='text', placeholder='Title', name="title", value= book.title || '')
+    .form-group.col-6
+      label(for='bookDesc') Description: 
+      input#bookDesc.form-control(type='text', placeholder='Description', name="description", value= book.description || '')
+    .form-group.col-6
+      label(for='userImages') Images: 
+      input#userImages.form-control(type='file', name="images", accept="image/png, image/jpeg", multiple)
+    button.btn.btn-success(type='submit') Update

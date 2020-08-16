@@ -1,0 +1,13 @@
+extends ../layouts/common
+
+block content
+  h1 Login
+  form(method="POST")
+    .form-row
+      .form-group.col-6
+        label(for='userEmail') Email
+        input#userName.form-control(type='text', placeholder='Email', name="email", value=values ? values.email : '')
+      .form-group.col-6
+        label(for='userPassword') Phone
+        input#userPhone.form-control(type='password', placeholder='Password', name="password")
+    button.btn.btn-success(type='submit') Login

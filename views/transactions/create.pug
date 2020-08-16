@@ -1,0 +1,19 @@
+extends ../layouts/common
+
+block content
+  mixin optionItem(item, prop)
+    option(value=item.id, selected=values && values[prop] === item.id ? true : false)= item.name || item.title
+
+  div Create
+  form(method="POST")
+    div
+      label(for='books') Books: 
+      select#books(name="bookId")
+        each book in books
+          +optionItem(book, 'bookId')
+    div
+      label(for='user') Users: 
+      select#users(name="userId")
+        each user in users
+          +optionItem(user, 'userId')
+    button.btn.btn-success(type='submit') Create

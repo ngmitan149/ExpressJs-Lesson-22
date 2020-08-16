@@ -1,0 +1,23 @@
+extends ../layouts/common
+include ../pagination/index.pug
+block content
+  mixin transactionItem(transaction)
+    li= `${transaction.bookInfo.title} ${transaction.userInfo.name}`
+      | &nbsp;
+      a(href=`/transactions/${transaction.id}/complete`)=transaction.isCompleted? 'Completed': 'Pending'
+      | &nbsp;
+      a(href=`/transactions/${transaction.id}/delete`) xóa
+  .container
+    .row
+      .col-12
+        h1 Transaction list
+        if errors
+          each error in errors
+            .alert.alert-danger= error
+        a(href='transactions/create') New
+        ul
+          each transaction in transactions
+            +transactionItem(transaction)
+      if pagination
+        .col-12
+          +paginationTmp(pagination)

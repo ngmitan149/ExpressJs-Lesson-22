@@ -1,0 +1,12 @@
+extends ../layouts/common
+
+block content
+  div Create
+  form(method="POST")
+    div
+      label(for='bookTitle') Title: 
+      input#bookTitle.form-control(type='text', placeholder='Title', name="title")
+    div
+      label(for='bookDesc') Description: 
+      input#bookDesc.form-control(type='text', placeholder='Description', name="description")
+    button.btn.btn-success(type='submit') Create

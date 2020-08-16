@@ -1,0 +1,27 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href='#')
+    img.d-inline-block.align-top(src='/docs/4.5/assets/brand/bootstrap-solid.svg', width='30', height='30', alt='', loading='lazy')
+    | Bootstrap
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link(href='/')
+          | Home
+      li.nav-item
+        a.nav-link(href='/books') Books
+      li.nav-item
+        a.nav-link(href='/books/private') Books admin
+      li.nav-item
+        a.nav-link(href='/users') Users
+      li.nav-item
+        a.nav-link(href='/profile') Profile
+      li.nav-item
+        a.nav-link(href='/transactions') Transactions
+    if user
+      p.form-inline.my-2.my-lg-0
+    form.form-inline.my-2.my-lg-0
+      input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+      button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  
