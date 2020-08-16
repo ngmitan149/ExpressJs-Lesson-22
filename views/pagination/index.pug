@@ -1,0 +1,21 @@
+mixin paginationTmp(pagination)
+  nav(aria-label='Page navigation example')
+    ul.pagination.justify-content-center
+      li(class=`page-item ${pagination.curPage === 1 ? "disabled" : ""}`)
+        a.page-link.disabled(href=`?${queryStr}page=${pagination.curPage - 1}`) Previous
+      - var from = pagination.curPage < pagination.limitPage? 1 : pagination.curPage - pagination.limitPage + 1
+      - var to = pagination.curPage >= pagination.lastPage - pagination.limitPage ? pagination.lastPage : pagination.curPage + pagination.limitPage - 1
+      li(class=`page-item d-none ${pagination.curPage > pagination.limitPage ? "d-block" : ""}`)
+        a.page-link.disabled(href=`?${queryStr}page=1`) 1
+      li(class=`page-item d-none ${pagination.curPage > pagination.limitPage + 1 ? "d-block" : ""}`)
+        a.page-link.disabled(href=`?${queryStr}page=${from - 1}`) ...
+      while from <= to
+        li(class=`page-item ${pagination.curPage === from ? 'active' : ''}`)
+            a.page-link(href=`?${queryStr}page=${from}`)= from
+        - from++
+      li(class=`page-item d-none ${pagination.curPage < pagination.lastPage - pagination.limitPage ? "d-block" : ""}`)
+        a.page-link.disabled(href=`?${queryStr}page=${to + 1}`) ...
+      li(class=`page-item d-none ${pagination.curPage < pagination.lastPage - pagination.limitPage + 1 ? "d-block" : ""}`)
+        a.page-link.disabled(href=`?${queryStr}page=${pagination.lastPage}`)= pagination.lastPage
+      li(class=`page-item ${pagination.curPage === pagination.lastPage ? "disabled" : ""}`)
+        a.page-link(href=`?${queryStr}page=${pagination.curPage + 1}`) Next

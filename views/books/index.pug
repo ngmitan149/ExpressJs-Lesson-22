@@ -1,0 +1,26 @@
+extends ../layouts/common
+
+include ../pagination/index.pug
+block content
+  mixin bookItem(book)
+    li 
+      img(src=JSON.parse(book.images)[0] || '', width=40)
+      | #{book.title}
+      | &nbsp;
+      a(href=`/books/private/${book.id}/edit`) edit
+      | &nbsp;
+      a(href=`/books/private/${book.id}/delete`) xóa
+  .container
+    .row
+      .col-12
+        a(href="/private/books/create") New
+        form(class="form-inline", action="/books", method="get")
+            .form-group
+              input#inputEmail4.form-control(type='text', placeholder='Enter your keyword to search ...', name="q", value=q)
+              button.btn.btn-secondary(type='submit') Search
+        ul
+          each book in books
+            +bookItem(book)
+      if pagination
+        .col-12
+          +paginationTmp(pagination)
