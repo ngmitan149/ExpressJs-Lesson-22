@@ -1,0 +1,26 @@
+extends ../layouts/common
+
+include ../pagination/index.pug
+block content
+  mixin cartLineItem(item)
+    li
+      img(src=JSON.parse(item.book.images)[0] || '', width=40)
+      | #{item.book.title} &nbsp; x#{item.quantity}
+      a(href=`/cart/add/${item.book.id}`) remove
+  .container
+    .row
+      if cart.length
+        .col-12
+          form(class="form-inline", action="/cart/payment", method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            .form-group
+              button.btn.btn-secondary(type='submit') Payment
+          ul
+            each item in cart
+              +cartLineItem(item)
+        if pagination
+          .col-12
+            +paginationTmp(pagination)
+      else
+        .col-12.text-center
+          h1 cart is empty

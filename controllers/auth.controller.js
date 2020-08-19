@@ -8,7 +8,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = {
     login: (req,res) => {
-        res.render('authentication/login')
+        res.render('authentication/login', { csrfToken: req.csrfToken() })
     },
     postLogin: (req, res) => {
       var email = req.body.email;

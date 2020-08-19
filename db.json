@@ -4,7 +4,7 @@
       "id": 1,
       "title": "ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio",
       "description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
-      "images": "[\"http://res.cloudinary.com/dxg2xguho/image/upload/v1597571042/q4h3znxifrrh8dmefeer.png\",\"http://res.cloudinary.com/dxg2xguho/image/upload/v1597571042/ptg2aygq1lvlyxzoogux.jpg\"]"
+      "images": "[\"http://res.cloudinary.com/dxg2xguho/image/upload/v1597718862/tmm4kvro1fqna7lqlgaa.jpg\"]"
     },
     {
       "id": 2,
@@ -604,12 +604,13 @@
   "users": [
     {
       "id": "L5DT4vEt9",
-      "name": "Tân",
+      "name": "Tân edited",
       "email": "ngmitan149@gmail.com",
       "password": "$2b$10$mSDOjbrYoFCFJzhTTbSvK.jNteS8fmibEtmVrtU6zfCmOdYpblPiq",
       "role": "admin",
       "wrongLoginCount": 0,
-      "avatar": ""
+      "avatar": "https://res.cloudinary.com/dxg2xguho/image/upload/v1597718704/rjsj6q0a8seblj3krwy9.jpg",
+      "_csrf": "mmkI1S1u-j1zhF5Sg-XjR7OTs0GvN4sqtNlw"
     },
     {
       "id": "QwA23zNLd",
@@ -635,13 +636,105 @@
       "id": "1",
       "bookId": 1,
       "userId": "L5DT4vEt9",
+      "quantity": 1,
       "isCompleted": false
     },
     {
       "id": "WEkbWz-Cw",
       "bookId": 2,
       "userId": "QwA23zNLd",
+      "quantity": 1,
       "isCompleted": false
+    },
+    {
+      "id": "Pl53nkgZe",
+      "bookId": 1,
+      "userId": "QwA23zNLd",
+      "quantity": 2,
+      "isComplete": false
+    },
+    {
+      "id": "8e0prEe3l7",
+      "bookId": 2,
+      "userId": "QwA23zNLd",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "nXyR9NDJLO",
+      "bookId": 3,
+      "userId": "QwA23zNLd",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "ls8qNWMty",
+      "bookId": 1,
+      "userId": "L5DT4vEt9",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "6tILEl-g35",
+      "bookId": 3,
+      "userId": "L5DT4vEt9",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "umsN0x-3Bo",
+      "bookId": 4,
+      "userId": "L5DT4vEt9",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "BNAHMusBXM",
+      "bookId": 5,
+      "userId": "L5DT4vEt9",
+      "quantity": 1,
+      "isComplete": false
+    },
+    {
+      "id": "irYGi77wV",
+      "bookId": 8,
+      "userId": "L5DT4vEt9",
+      "quantity": 1,
+      "isComplete": false
+    }
+  ],
+  "sessions": [
+    {
+      "id": "Azn66ogNi",
+      "cart": {}
+    },
+    {
+      "id": "ME3mgB_cJ"
+    },
+    {
+      "id": "SO2f3Knws"
+    },
+    {
+      "id": "MHXd2bSZa"
+    },
+    {
+      "id": "gPnrBFpLK"
+    },
+    {
+      "id": "t8XYEy3i_X"
+    },
+    {
+      "id": "r9yEtHpmT",
+      "cart": {}
+    },
+    {
+      "id": "1jT3E3g-l"
+    },
+    {
+      "id": "O_0LDeNdq"
+    },
+    {
+      "id": "ZxXHGcZpf"
     }
   ]
 }

@@ -5,6 +5,7 @@ block content
   img(src=!user.avatar ? "https://cdn.glitch.com/76518169-9662-4082-9d70-72da336ba7bd%2Fphoto_2020-08-10_20-08-03.jpg?v=1597545651946" : user.avatar width="100" height="100")
   a(href="/profile/avatar") Edit avatar
   form(action="/profile/update?_method=PUT" method="post")
+    input(type="hidden" name="_csrf" value=csrfToken)
     div
       label(for='userName') Name: 
       input#userName.form-control(type='text', placeholder='Name', name="name" value=values? values.name: user.name || '')

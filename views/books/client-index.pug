@@ -3,9 +3,11 @@ extends ../layouts/common
 include ../pagination/index.pug
 block content
   mixin bookItem(book)
-    li= book.title
+    li
+      img(src=JSON.parse(book.images)[0] || '', width=40)
+      | #{book.title}
       | &nbsp;
-      a(href=`/books/${book.id}/addToCart`) add to cart
+      a(href=`/cart/add/${book.id}`) add to cart
   .container
     .row
       .col-12

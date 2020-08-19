@@ -17,7 +17,7 @@ module.exports = {
       }
     })
     res.render('transactions/index', {
-      ...helper.pagination(transactions, 'transactions' ,{
+      ...helper.pagination(transactions, 'transactions', req.query, {
         curPage: req.query.page,
         perPage: 8,
         limitPage: 3,
@@ -28,7 +28,7 @@ module.exports = {
   create: (req, res) => {
     var books = db.get('books').value();
     var users = db.get('users').value();
-    res.render('transactions/create', {books, users})
+    res.render('transactions/create', {books, users, csrfToken: req.csrfToken()})
   },
   
   postCreate: (req, res) => {
