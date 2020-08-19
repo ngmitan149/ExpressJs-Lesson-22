@@ -3,6 +3,9 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('./db.json')
 const db = low(adapter)
 
+db.defaults({ books: [], users: [], transactions: [], sessions: []})
+  .write()
+
 db._.mixin({
     filterLowerCase: function(array, options = {}) {
         let arrFiltered = [];

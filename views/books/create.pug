@@ -3,6 +3,7 @@ extends ../layouts/common
 block content
   div Create
   form(method="POST")
+    input(type="hidden" name="_csrf" value=csrfToken)
     div
       label(for='bookTitle') Title: 
       input#bookTitle.form-control(type='text', placeholder='Title', name="title")

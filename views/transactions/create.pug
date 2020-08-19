@@ -6,6 +6,7 @@ block content
 
   div Create
   form(method="POST")
+    input(type="hidden" name="_csrf" value=csrfToken)
     div
       label(for='books') Books: 
       select#books(name="bookId")

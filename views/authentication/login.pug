@@ -3,6 +3,7 @@ extends ../layouts/common
 block content
   h1 Login
   form(method="POST")
+    input(type="hidden" name="_csrf" value=csrfToken)
     .form-row
       .form-group.col-6
         label(for='userEmail') Email

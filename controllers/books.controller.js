@@ -77,7 +77,7 @@ module.exports = {
   },
   
   create: (req, res) => {
-    res.render('books/create')
+    res.render('books/create', { csrfToken: req.csrfToken() })
   },
   
   postCreate: (req, res) => {
@@ -95,7 +95,7 @@ module.exports = {
   
   edit: (req, res) => {
     var book = db.get('books').find({id: parseInt(req.params.id)}).value()
-    res.render('books/edit', {book})
+    res.render('books/edit', {book, csrfToken: req.csrfToken()})
   },
   
   putUpdate: (req, res) => {

@@ -28,7 +28,7 @@ module.exports = {
               .take(5)
               .value()
       res.render('users/index', {
-        ...helper.pagination(matchedUsers, 'users', {
+        ...helper.pagination(matchedUsers, 'users', req.query, {
           curPage: req.query.page,
           perPage: 8,
           limitPage: 3,
@@ -38,7 +38,7 @@ module.exports = {
     }
     
     res.render('users/index', {
-      ...helper.pagination(db.get('users').value(), 'users', {
+      ...helper.pagination(db.get('users').value(), 'users', req.query, {
           curPage: req.query.page,
           perPage: 8,
           limitPage: 3,
@@ -47,7 +47,7 @@ module.exports = {
   },
   
   create: (req, res) => {
-    res.render('users/create')
+    res.render('users/create', { csrfToken: req.csrfToken() })
   },
   
   postCreate: (req, res) => {
@@ -71,17 +71,17 @@ module.exports = {
   
   edit: (req, res) => {
     var user = db.get('users').find({id: req.params.id}).value()
-    res.render('users/edit', {user})
+    res.render('users/edit', {user, csrfToken: req.csrfToken()})
   },
   
   profile: (req, res) => {
     var user = db.get('users').find({id: req.signedCookies.userId}).value()
-    res.render('users/profile', {user})
+    res.render('users/profile', {user, csrfToken: req.csrfToken()})
   },
   
   avatar: (req, res) => {
     var user = db.get('users').find({id: req.signedCookies.userId}).value()
-    res.render('users/avatar', {user})
+    res.render('users/avatar', {user, csrfToken: req.csrfToken()})
   },
   
   putAvatar: (req, res) => {
